@@ -1,3 +1,15 @@
+<p align="center">
+    <br>
+    <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers_logo_name.png" width="400"/>
+    <br>
+<p>
+
+<p align="center">
+<br>
+  <img src="https://assets.website-files.com/5ac6b7f2924c656f2b13a88c/6066c22135b8983b61ad7939_weights-and-biases-logo.svg" alt="" width="380">
+    <br>
+</p>
+
 # NLP Project Template
 
 This directory contains a template for NLP projects in Huggingface [Transformers](https://huggingface.co/) library.
