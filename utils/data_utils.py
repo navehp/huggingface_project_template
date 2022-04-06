@@ -1,14 +1,10 @@
-import os
-from pathlib import Path
-
-from transformers import AutoTokenizer
-from datasets import load_dataset, concatenate_datasets
+from datasets import load_dataset
 
 from consts import *
 
 
-def load_glue(data_args, suffix='.json'):  # todo add this to consts
-    data_dir = DATA_DIR / data_args.dataset / data_args.task_name
+def load_dataset_from_files(data_args, suffix=JSON):
+    data_dir = DATA_DIR / data_args.dataset
     data_files = {
         TRAIN: data_dir / (TRAIN + suffix),
         VALIDATION: data_dir / (VALIDATION + suffix),

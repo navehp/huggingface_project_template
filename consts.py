@@ -1,11 +1,11 @@
 from pathlib import Path
 
-PROJECT_NAME = "Project_Template"
+PROJECT_NAME = "project_template"
 DESCRIPTION = """
 Distilling a model through an API.
 """
 
-PROJECT_DIR = Path.home() / "project_template"
+PROJECT_DIR = Path.home() / PROJECT_NAME
 DATA_DIR = PROJECT_DIR / "data"
 EXPERIMENTS_DIR = PROJECT_DIR / "experiments"
 
@@ -22,6 +22,13 @@ AUTO = "auto"
 # WANDB
 WANDB = "wandb"
 WANDB_PROJECT = "WANDB_PROJECT"
+
+# SUFFIXES
+CSV = '.csv'
+JSON = '.json'
+TXT = '.txt'
+JPG = '.jpg'
+PNG = '.png'
 
 # SPLITS
 TRAIN = "train"

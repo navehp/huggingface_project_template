@@ -1,8 +1,5 @@
-export PROJECT_NAME=template
-export DIR_NAME=project_template
-
-### Create Dir ###
-mkdir ${DIR_NAME}
+export PROJECT_NAME=project_template
+export VENV_NAME=template
 
 ### Install Anaconda ###
 mkdir ~/tmp
@@ -15,9 +12,9 @@ rm -r tmp
 
 ### Create Venv ###
 echo "Conda Pytorch Env Setup"
-conda create --name ${PROJECT_NAME} python==3.9.7  # Run this by hand before the other commands
+conda create --name ${VENV_NAME} python==3.9.7  # Run this by hand before the other commands
 
-conda activate ${PROJECT_NAME}
+conda activate ${VENV_NAME}
 conda install pip
 pip install numpy scipy sklearn
 pip install torch==1.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html  # make sure to install the right torch
@@ -29,15 +26,11 @@ pip install wandb
 wandb login  # Only do this once on each server
 # paste wandb api code:
 
-### Clone git repo ###
-#echo "Clone git repository"
-#mkdir -p ~/dev
-#cd ~/dev/
-#git clone <link to git repo>
-#echo "export GIT_REPO=\$HOME/dev/<repo name>/" >> ~/.bash_profile
+### Create Dir ###
+mkdir ${PROJECT_NAME}
 
 ### Define Eliases ###
 conda deactivate
 echo "alias 'conda_env'='source \$HOME/anaconda3/etc/profile.d/conda.sh'" >> ~/.bash_profile
-echo "alias '${PROJECT_NAME}'='conda_env && conda activate ${PROJECT_NAME} && export PYTHONPATH=\$HOME/${DIR_NAME}/:\$PYTHONPATH && cd \$HOME/${DIR_NAME}/'" >> ~/.bash_profile
+echo "alias '${VENV_NAME}'='conda_env && conda activate ${VENV_NAME} && export PYTHONPATH=\$HOME/${PROJECT_NAME}/:\$PYTHONPATH && cd \$HOME/${PROJECT_NAME}/'" >> ~/.bash_profile
 source ~/.bash_profile
